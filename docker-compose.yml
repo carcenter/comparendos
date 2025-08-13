@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mariadb_10_11:
+    image: mariadb:10.11.13
+    container_name: mariadb_10_11
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_10_11_data:/var/lib/mysql
+
+  mariadb_10_6:
+    image: mariadb:10.6.22
+    container_name: mariadb_10_6
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+    ports:
+      - "3308:3306"
+    volumes:
+      - mariadb_10_6_data:/var/lib/mysql
+
+volumes:
+  mariadb_10_11_data:
+  mariadb_10_6_data:
