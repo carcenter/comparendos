@@ -1,3 +1,19 @@
+def cargar_comparendos():
+    conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT codigo, descripcion FROM comparendos")
+    lista = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return {item['codigo']: item['descripcion'] for item in lista}
+
+def crear_comparendo(codigo, descripcion):
+    conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO comparendos (codigo, descripcion) VALUES (%s, %s)", (codigo, descripcion))
+    conn.commit()
+    cursor.close()
+    conn.close()
 def existe_comparendo(documento, numero_comparendo):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
@@ -9,12 +25,12 @@ def existe_comparendo(documento, numero_comparendo):
     cursor.close()
     conn.close()
     return existe
-def insert_proceso(registro_id, municipio, documento, numero_comparendo, process_id, estado, mensaje):
+def insert_proceso(client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado="pendiente"):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO proceso_log (client_id, municipio, documento, numero_comparendo, process_id, estado, mensaje) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-        (registro_id, municipio, documento, numero_comparendo, process_id, estado, mensaje)
+        "INSERT INTO proceso_log (client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+        (client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado)
     )
     conn.commit()
     cursor.close()
