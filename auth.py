@@ -7,8 +7,10 @@ def login(municipio):
     user = os.getenv(f"{municipio}_USER")
     password = os.getenv(f"{municipio}_PASSWORD")
 
-    resp = requests.post(url, json={"consumidor": "web", "usuario": user, "password": password}, verify=False)
-    # print(f"Logging in to {url} with user {user} with password {password} with json: {resp.json()}")
-    resp.raise_for_status()
-
-    return resp.json()["token"]
+    try:
+        resp = requests.post(url, json={"consumidor": "web", "usuario": user, "password": password}, verify=False)
+        resp.raise_for_status()
+        return resp.json()["token"]
+    except requests.exceptions.RequestException as e:
+        print(f"Error al conectar o autenticar con {municipio}: {e}")
+        return None

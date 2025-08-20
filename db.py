@@ -1,3 +1,29 @@
+# --- Control de batches diarios ---
+import datetime
+import mysql.connector
+import os
+
+def get_last_retoma():
+    """Obtiene el último offset procesado para el mes actual."""
+    conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
+    cursor = conn.cursor(dictionary=True)
+    mes_actual = datetime.date.today().strftime('%Y-%m')
+    cursor.execute("SELECT `offset` FROM retoma_log WHERE mes = %s ORDER BY fecha DESC LIMIT 1", (mes_actual,))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    return row['offset'] if row else 0
+
+def update_retoma(offset):
+    """Actualiza el offset procesado para el mes actual."""
+    conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
+    cursor = conn.cursor()
+    mes_actual = datetime.date.today().strftime('%Y-%m')
+    cursor.execute("INSERT INTO retoma_log (mes, `offset`, fecha) VALUES (%s, %s, NOW())", (mes_actual, offset))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
 def cargar_comparendos():
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor(dictionary=True)
@@ -25,12 +51,13 @@ def existe_comparendo(documento, numero_comparendo):
     cursor.close()
     conn.close()
     return existe
-def insert_proceso(client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado="pendiente"):
+
+def insert_proceso(client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado="pendiente"):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO proceso_log (client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-        (client_id, municipio, placa, documento, numero_comparendo, codigo_comparendo, process_id, estado)
+        "INSERT INTO proceso_log (client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        (client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado)
     )
     conn.commit()
     cursor.close()
@@ -46,19 +73,6 @@ def update_estado_proceso(process_id, nuevo_estado):
     conn.commit()
     cursor.close()
     conn.close()
-
-def update_retoma(registro_id):
-    conn = get_db_connection2(os.getenv("DB_NAME_RETOMA"))
-    cursor = conn.cursor()
-    cursor.execute(
-        "REPLACE INTO retoma_log (id, last_processed_id) VALUES (1, %s)",
-        (registro_id,)
-    )
-    conn.commit()
-    cursor.close()
-    conn.close()
-import mysql.connector
-import os
 
 def get_db_connection(db_name):
     return mysql.connector.connect(
