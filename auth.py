@@ -3,7 +3,7 @@ import os
 import sys
 
 def login(municipio):
-    url = f"{os.getenv(f"{municipio}_API")}/login"
+    url = f"{os.getenv(municipio + '_API')}/login"
     user = os.getenv(f"{municipio}_USER")
     password = os.getenv(f"{municipio}_PASSWORD")
 
