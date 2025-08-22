@@ -52,10 +52,10 @@ def consumir_api_template(endpoint_env, apikey_env, user_env, pass_env, payload)
     return response.json()
 
 def get_registros(offset, limit):
-    """Obtiene registros de la tabla clientes con paginación."""
+    """Obtiene registros de la tabla clients con paginación."""
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM clientes WHERE Document=98556058 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM clients WHERE Document=98556058 LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
