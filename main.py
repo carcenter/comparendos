@@ -55,7 +55,7 @@ def get_registros(offset, limit):
     """Obtiene registros de la tabla clients con paginación."""
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM clients WHERE Document=98556058 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM clients WHERE Document=80409213 LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -66,8 +66,7 @@ def verificar_comparendos():
 
     offset = get_last_retoma()
     registros = get_registros(offset, BATCH_SIZE)
-    print(registros)
-    sys.exit()
+
     if not registros:
         print("No hay más registros para procesar este mes.")
         return
