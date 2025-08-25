@@ -48,7 +48,7 @@ def consumir_api_template(endpoint_env, apikey_env, user_env, pass_env, payload)
         "Content-Type": "application/json"
     }
     auth = (usuario, password)
-    response = requests.post(url, json=payload, headers=headers, auth=auth, verify=True)
+    response = requests.post(url, json=payload, headers=headers, auth=auth, verify=False)
     return response.json()
 
 def get_registros(offset, limit):
@@ -99,7 +99,7 @@ def verificar_comparendos():
                     f"{os.getenv(f'{municipio}_API')}/home/findInfoHomePublic",
                     cookies=cookies,
                     json=payload,
-                    verify=True,
+                    verify=False,
                     timeout=30
                 )
                 data = response.json()
