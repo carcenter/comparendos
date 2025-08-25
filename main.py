@@ -48,7 +48,7 @@ def consumir_api_template(endpoint_env, apikey_env, user_env, pass_env, payload)
         "Content-Type": "application/json"
     }
     auth = (usuario, password)
-    response = requests.post(url, json=payload, headers=headers, auth=auth)
+    response = requests.post(url, json=payload, headers=headers, auth=auth, verify=True)
     return response.json()
 
 def get_registros(offset, limit):
@@ -99,7 +99,7 @@ def verificar_comparendos():
                     f"{os.getenv(f'{municipio}_API')}/home/findInfoHomePublic",
                     cookies=cookies,
                     json=payload,
-                    verify=False,
+                    verify=True,
                     timeout=30
                 )
                 data = response.json()
@@ -129,6 +129,7 @@ def verificar_comparendos():
                         descripcion = None
                         estado_cuenta = item.get("estadoCuenta", {})
                         infracciones = estado_cuenta.get("infraccion", [])
+                        print('infracciones: '+ len(infracciones))
                         if infracciones and isinstance(infracciones, list) and len(infracciones) > 0:
                             codigo = infracciones[0].get("codigoInfraccion")
                             descripcion = infracciones[0].get("descripcion")

@@ -8,7 +8,7 @@ def login(municipio):
     password = os.getenv(f"{municipio}_PASSWORD")
 
     try:
-        resp = requests.post(url, json={"consumidor": "web", "usuario": user, "password": password}, verify=False)
+        resp = requests.post(url, json={"consumidor": "web", "usuario": user, "password": password}, verify=True)
         resp.raise_for_status()
         return resp.json()["token"]
     except requests.exceptions.RequestException as e:
