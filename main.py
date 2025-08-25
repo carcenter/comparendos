@@ -145,29 +145,29 @@ def verificar_comparendos():
                                 crear_comparendo(codigo, descripcion)
                                 comparendos_dict[codigo] = descripcion
                                 
-                        # Construir usuario para template
-                        usuario_template = {
-                            "phone": phone,
-                            "parameters": [
-                                {"order": 0, "parameter": municipio},
-                                {"order": 1, "parameter": item.get("fechaComparendo")},
-                                {"order": 2, "parameter": placa},
-                                {"order": 3, "parameter": codigo},
-                                {"order": 5, "parameter": descripcion}
-                            ]
-                        }
-                        usuarios_para_envio.append(usuario_template)
-                        insert_proceso(
-                            registro.get("id"),
-                            municipio,
-                            placa,
-                            documento,
-                            phone,
-                            numero_comparendo,
-                            codigo,
-                            process_id,
-                            "pendiente"
-                        )
+                            # Construir usuario para template
+                            usuario_template = {
+                                "phone": phone,
+                                "parameters": [
+                                    {"order": 0, "parameter": municipio},
+                                    {"order": 1, "parameter": item.get("fechaComparendo")},
+                                    {"order": 2, "parameter": placa},
+                                    {"order": 3, "parameter": codigo},
+                                    {"order": 5, "parameter": descripcion}
+                                ]
+                            }
+                            usuarios_para_envio.append(usuario_template)
+                            insert_proceso(
+                                registro.get("id"),
+                                municipio,
+                                placa,
+                                documento,
+                                phone,
+                                numero_comparendo,
+                                codigo,
+                                process_id,
+                                "pendiente"
+                            )
     # Enviar template y actualizar estado
     if usuarios_para_envio:
         holaamigo_token = holaamigo_login()

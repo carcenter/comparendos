@@ -44,7 +44,7 @@ def existe_comparendo(documento, numero_comparendo):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT 1 FROM proceso_log WHERE documento = %s AND numero_comparendo = %s LIMIT 1",
+        "SELECT 1 FROM proceso_log WHERE documento = %s AND numero_comparendo = %s AND estado = 'completado' LIMIT 1",
         (documento, numero_comparendo)
     )
     existe = cursor.fetchone() is not None
