@@ -129,7 +129,7 @@ def verificar_comparendos():
                         descripcion = None
                         estado_cuenta = item.get("estadoCuenta", {})
                         infracciones = estado_cuenta.get("infraccion", [])
-                        print('infracciones: '+ len(infracciones))
+                        print(f'infracciones: {len(infracciones)}')
                         if infracciones and isinstance(infracciones, list) and len(infracciones) > 0:
                             codigo = infracciones[0].get("codigoInfraccion")
                             descripcion = infracciones[0].get("descripcion")
