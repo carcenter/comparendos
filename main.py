@@ -48,14 +48,14 @@ def consumir_api_template(endpoint_env, apikey_env, user_env, pass_env, payload)
         "Content-Type": "application/json"
     }
     auth = (usuario, password)
-    response = requests.post(url, json=payload, headers=headers, auth=auth, verify=False)
+    response = requests.post(url, json=payload, headers=headers, auth=auth)
     return response.json()
 
 def get_registros(offset, limit):
     """Obtiene registros de la tabla clients con paginación."""
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM clients WHERE Document=42976435 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM clients WHERE Document=42693793 LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -83,7 +83,9 @@ def verificar_comparendos():
     usuarios_para_envio = []
     
     for registro in registros:
+        print(registro.get("Document"))
         for municipio in tokens:
+            print(municipio)
             token_sd = tokens[municipio]
             cookies = {"token_sd": token_sd} if token_sd else None
             payload = {
