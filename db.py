@@ -7,7 +7,13 @@ def get_last_retoma():
     """Obtiene el último offset procesado para el mes actual."""
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor(dictionary=True)
-    mes_actual = datetime.date.today().strftime('%Y-%m')
+    today = datetime.date.today()
+    mes_actual = today.strftime('%Y-%m')
+    # Si es el primer día del mes, offset = 0
+    if today.day == 1:
+        cursor.close()
+        conn.close()
+        return 0
     cursor.execute("SELECT `offset` FROM retoma_log WHERE mes = %s ORDER BY fecha DESC LIMIT 1", (mes_actual,))
     row = cursor.fetchone()
     cursor.close()
