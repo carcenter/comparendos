@@ -55,7 +55,7 @@ def get_registros(offset, limit):
     """Obtiene registros de la tabla clients con paginación."""
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM clients WHERE Document=42693793 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM clients LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
