@@ -179,7 +179,7 @@ def verificar_comparendos():
         if response_envio is None:
             print("Error al enviar el template: la respuesta fue vacía o inválida.")
         else:
-            if response_envio.get("status") == "True":
+            if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
     # Actualizar offset para el siguiente batch
     nuevo_offset = offset + len(registros)
