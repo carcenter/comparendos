@@ -168,6 +168,8 @@ def verificar_comparendos():
                                 process_id,
                                 "pendiente"
                             )
+                        else:
+                            print("El comparendo ya fue, notificado previamente")
     # Enviar template y actualizar estado
     if usuarios_para_envio:
         holaamigo_token = holaamigo_login()
