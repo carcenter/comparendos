@@ -46,6 +46,7 @@ def crear_comparendo(codigo, descripcion):
     conn.commit()
     cursor.close()
     conn.close()
+    
 def existe_comparendo(documento, numero_comparendo):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
