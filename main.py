@@ -171,6 +171,7 @@ def verificar_comparendos():
                         else:
                             print("El comparendo ya fue, notificado previamente")
     # Enviar template y actualizar estado
+    print(f"Enviando template a {len(usuarios_para_envio)} usuarios.")
     if usuarios_para_envio:
         holaamigo_token = holaamigo_login()
         if not holaamigo_token:
