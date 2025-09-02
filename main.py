@@ -3,6 +3,7 @@ import sys
 import random
 import string
 import requests
+import datetime
 from dotenv import load_dotenv
 from auth import login
 from db import (
@@ -71,124 +72,119 @@ def verificar_comparendos():
         print("No hay más registros para procesar este mes.")
         return
     
-    tokens = {
-        "BELLO": login("BELLO"),
-        "ITAGUI": login("ITAGUI"),
-        "MEDELLIN": login("MEDELLIN"),
-        "SABANETA": login("SABANETA"),
-    }
-    
+    print(f"Inicio del proceso: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
+    from concurrent.futures import ThreadPoolExecutor
+    def consultar_municipio(session, municipio, registro, token):
+        cookies = {"token_sd": token} if token else None
+        payload = {
+            "criterio": registro.get("Document"),
+            "idTipoIdentificacion": "2",
+            "response": None,
+            "tipoConsulta": "0"
+        }
+        try:
+            response = session.post(
+                f"{os.getenv(f'{municipio}_API')}/home/findInfoHomePublic",
+                cookies=cookies,
+                json=payload,
+                verify=False,
+                timeout=30
+            )
+            return municipio, response.json(), registro
+        except Exception as e:
+            print(f"Error en {municipio}: {e}")
+            return municipio, None, registro
+
+    tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
     process_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
     comparendos_dict = cargar_comparendos()
     usuarios_para_envio = []
-    
-    for registro in registros:
-        print(registro.get("Document"))
-        for municipio in tokens:
-            print(municipio)
-            token_sd = tokens[municipio]
-            cookies = {"token_sd": token_sd} if token_sd else None
-            payload = {
-                "criterio": registro.get("Document"),
-                "idTipoIdentificacion": "2",
-                "response": None,
-                "tipoConsulta": "0"
-            }
-            try:
-                response = requests.post(
-                    f"{os.getenv(f'{municipio}_API')}/home/findInfoHomePublic",
-                    cookies=cookies,
-                    json=payload,
-                    verify=False,
-                    timeout=30
-                )
-                data = response.json()
-            except requests.exceptions.Timeout:
-                print(f"Timeout al consultar API de {municipio}. Se omite este registro.")
-                continue
-            except Exception as e:
-                print(f"Error al decodificar JSON para municipio {municipio}: {e}")
-                continue
 
-            consulta = data.get("consultaMultaOComparendoOutDTO", {})
-            # Procesar informacionComparendo
-            comparendos = consulta.get("informacionComparendo", [])
-            # Procesar informacionMulta
-            multas = consulta.get("informacionMulta", [])
+    with requests.Session() as session:
+        for registro in registros:
+            with ThreadPoolExecutor(max_workers=4) as executor:
+                futures = [
+                    executor.submit(consultar_municipio, session, municipio, registro, tokens[municipio])
+                    for municipio in tokens
+                ]
+                for future in futures:
+                    municipio, data, registro = future.result()
+                    if not data:
+                        continue
 
-            for lista, tipo in [(comparendos, "comparendo"), (multas, "multa")]:
-                if lista and isinstance(lista, list) and len(lista) > 0:
-                    for item in lista:
-                        numero_comparendo = item.get("numeroComparendo")
-                        documento = registro.get("Document")
-                        phone = f"+57{registro.get('Phone')}"
-                        placa = item.get("placa")
-                        
-                        # Extraer código y descripción de la infracción desde estadoCuenta.infraccion[0]
-                        codigo = None
-                        descripcion = None
-                        estado_cuenta = item.get("estadoCuenta", {})
-                        infracciones = estado_cuenta.get("infraccion", [])
-                        print(f'infracciones: {len(infracciones)}')
-                        if infracciones and isinstance(infracciones, list) and len(infracciones) > 0:
-                            codigo = infracciones[0].get("codigoInfraccion")
-                            descripcion = infracciones[0].get("descripcion")
-                        # Si no hay infracción, intentar usar los campos directos (por compatibilidad)
-                        if not codigo:
-                            codigo = item.get("codigoInfraccion")
+                    consulta = data.get("consultaMultaOComparendoOutDTO", {})
+                    comparendos = consulta.get("informacionComparendo", [])
+                    multas = consulta.get("informacionMulta", [])
 
-                        if not descripcion:
-                            descripcion = item.get("descripcionInfraccion")
+                    for lista, tipo in [(comparendos, "comparendo"), (multas, "multa")]:
+                        if lista and isinstance(lista, list) and len(lista) > 0:
+                            for item in lista:
+                                numero_comparendo = item.get("numeroComparendo")
+                                documento = registro.get("Document")
+                                phone = f"+57{registro.get('Phone')}"
+                                placa = item.get("placa")
 
-                        if not existe_comparendo(documento, numero_comparendo):
-                            if codigo not in comparendos_dict:
-                                crear_comparendo(codigo, descripcion)
-                                comparendos_dict[codigo] = descripcion
-                                
-                            # Construir usuario para template
-                            usuario_template = {
-                                "phone": phone,
-                                "parameters": [
-                                    {"order": 0, "parameter": municipio},
-                                    {"order": 1, "parameter": item.get("fechaComparendo")},
-                                    {"order": 2, "parameter": placa},
-                                    {"order": 3, "parameter": codigo},
-                                    {"order": 5, "parameter": descripcion}
-                                ]
-                            }
-                            usuarios_para_envio.append(usuario_template)
-                            insert_proceso(
-                                registro.get("id"),
-                                municipio,
-                                placa,
-                                documento,
-                                phone,
-                                numero_comparendo,
-                                codigo,
-                                process_id,
-                                "pendiente"
-                            )
-                        else:
-                            print("El comparendo ya fue, notificado previamente")
+                                codigo = None
+                                descripcion = None
+                                estado_cuenta = item.get("estadoCuenta", {})
+                                infracciones = estado_cuenta.get("infraccion", [])
+                                if infracciones and isinstance(infracciones, list) and len(infracciones) > 0:
+                                    codigo = infracciones[0].get("codigoInfraccion")
+                                    descripcion = infracciones[0].get("descripcion")
+                                if not codigo:
+                                    codigo = item.get("codigoInfraccion")
+                                if not descripcion:
+                                    descripcion = item.get("descripcionInfraccion")
+
+                                if not existe_comparendo(documento, numero_comparendo):
+                                    if codigo not in comparendos_dict:
+                                        crear_comparendo(codigo, descripcion)
+                                        comparendos_dict[codigo] = descripcion
+
+                                    usuario_template = {
+                                        "phone": phone,
+                                        "parameters": [
+                                            {"order": 0, "parameter": municipio},
+                                            {"order": 1, "parameter": item.get("fechaComparendo")},
+                                            {"order": 2, "parameter": placa},
+                                            {"order": 3, "parameter": codigo},
+                                            {"order": 5, "parameter": descripcion}
+                                        ]
+                                    }
+                                    usuarios_para_envio.append(usuario_template)
+                                    insert_proceso(
+                                        registro.get("id"),
+                                        municipio,
+                                        placa,
+                                        documento,
+                                        phone,
+                                        numero_comparendo,
+                                        codigo,
+                                        process_id,
+                                        "pendiente"
+                                    )
+                                else:
+                                    print(f"El comparendo ya fue notificado previamente Documento: {documento} Comparendo: {numero_comparendo}")
     # Enviar template y actualizar estado
     if len(usuarios_para_envio) > 0:
-        print(f"Enviando template a {len(usuarios_para_envio)} usuarios.")
+        print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Enviando {len(usuarios_para_envio)} templates.")
         holaamigo_token = holaamigo_login()
         if not holaamigo_token:
-            print("No se pudo obtener el token de HolaAmigo. Revisa las credenciales y la conexión.")
+            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No se pudo obtener el token de HolaAmigo. Revisa las credenciales y la conexión.")
             return
         payload = construir_payload_template(usuarios_para_envio)
         response_envio = holaamigo_template(holaamigo_token, payload)
         if response_envio is None:
-            print("Error al enviar el template: la respuesta fue vacía o inválida.")
+            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Error al enviar el template: la respuesta fue vacía o inválida.")
         else:
-            print(f"Respuesta del envío: {response_envio.get('status')} - {response_envio.get('message')}")
+            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Respuesta del envío: {response_envio.get('status')} - {response_envio.get('message')}")
             if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
-                print("Proceso completado")
+                print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Proceso completado")
     # Actualizar offset para el siguiente batch
     nuevo_offset = offset + len(registros)
     update_retoma(nuevo_offset)
+    print(f"Fin del proceso: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
 
 if __name__ == "__main__":
     verificar_comparendos()
