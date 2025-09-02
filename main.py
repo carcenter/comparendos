@@ -182,7 +182,7 @@ def verificar_comparendos():
         if response_envio is None:
             print("Error al enviar el template: la respuesta fue vacía o inválida.")
         else:
-            print(f"Respuesta del envío: {response_envio.get('status')}")
+            print(f"Respuesta del envío: {response_envio}")
             if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
                 print("Proceso completado")
