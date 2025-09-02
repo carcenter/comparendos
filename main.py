@@ -177,12 +177,12 @@ def verificar_comparendos():
         if not holaamigo_token:
             print("No se pudo obtener el token de HolaAmigo. Revisa las credenciales y la conexión.")
             return
-        print(f"Enviando template a {len(usuarios_para_envio)} usuarios.")
         payload = construir_payload_template(usuarios_para_envio)
         response_envio = holaamigo_template(holaamigo_token, payload)
         if response_envio is None:
             print("Error al enviar el template: la respuesta fue vacía o inválida.")
         else:
+            print(f"Respuesta del envío: {response_envio.get('status')}")
             if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
                 print("Proceso completado")
