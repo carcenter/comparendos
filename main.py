@@ -72,10 +72,10 @@ def verificar_comparendos():
         return
     
     tokens = {
-        "BELLO": login("BELLO"),
+        # "BELLO": login("BELLO"),
         "ITAGUI": login("ITAGUI"),
-        "MEDELLIN": login("MEDELLIN"),
-        "SABANETA": login("SABANETA"),
+        # "MEDELLIN": login("MEDELLIN"),
+        # "SABANETA": login("SABANETA"),
     }
     
     process_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
