@@ -55,7 +55,7 @@ def get_registros(offset, limit):
     """Obtiene registros de la tabla clients con paginación."""
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM clients WHERE Document = 80409213 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM clients LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -182,7 +182,7 @@ def verificar_comparendos():
         if response_envio is None:
             print("Error al enviar el template: la respuesta fue vacía o inválida.")
         else:
-            print(f"Respuesta del envío: {response_envio.get('status')}")
+            print(f"Respuesta del envío: {response_envio.get('status')} - {response_envio.get('message')}")
             if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
                 print("Proceso completado")
