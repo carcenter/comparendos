@@ -176,6 +176,7 @@ def verificar_comparendos():
         if not holaamigo_token:
             print("No se pudo obtener el token de HolaAmigo. Revisa las credenciales y la conexión.")
             return
+        print(f"Enviando template a {len(usuarios_para_envio)} usuarios.")
         payload = construir_payload_template(usuarios_para_envio)
         response_envio = holaamigo_template(holaamigo_token, payload)
         if response_envio is None:
@@ -183,6 +184,7 @@ def verificar_comparendos():
         else:
             if response_envio.get("status") == True:
                 update_estado_proceso(process_id, "completado")
+                print("Proceso completado")
     # Actualizar offset para el siguiente batch
     nuevo_offset = offset + len(registros)
     update_retoma(nuevo_offset)
