@@ -1,5 +1,4 @@
 .env
 venv/
-logs/
 main.py
 __pycache__/
