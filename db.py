@@ -59,16 +59,28 @@ def existe_comparendo(documento, numero_comparendo):
     conn.close()
     return existe
 
-def insert_proceso(client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado="pendiente"):
+def insert_proceso(client_id, municipio, placa, documento, celular, numero_comparendo, fecha_comparendo, codigo_comparendo, process_id, estado="pendiente"):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO proceso_log (client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
-        (client_id, municipio, placa, documento, celular, numero_comparendo, codigo_comparendo, process_id, estado)
+        "INSERT INTO proceso_log (client_id, municipio, placa, documento, celular, numero_comparendo, fecha_comparendo, codigo_comparendo, process_id, estado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        (client_id, municipio, placa, documento, celular, numero_comparendo, fecha_comparendo, codigo_comparendo, process_id, estado)
     )
     conn.commit()
     cursor.close()
     conn.close()
+
+def get_registros_pendientes_por_process_id(process_id):
+    conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(
+        "SELECT * FROM proceso_log WHERE process_id = %s AND estado = 'pendiente'",
+        (process_id,)
+    )
+    results = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return results
 
 def update_estado_proceso(process_id, nuevo_estado):
     conn = get_db_connection2(os.getenv("DB_NAME_PROCESS"))

@@ -16,7 +16,7 @@ def holaamigo_login():
     }
 
     try:
-        response = requests.post(url, json=payload, verify=False)
+        response = requests.post(url, json=payload, verify=True)
         response.raise_for_status()
         
         try:
@@ -39,7 +39,7 @@ def holaamigo_template(token, plantilla_payload):
     }
 
     try:
-        response = requests.post(url, json=plantilla_payload, headers=headers, verify=False)
+        response = requests.post(url, json=plantilla_payload, headers=headers, verify=True)
         response.raise_for_status()
 
         try:

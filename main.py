@@ -15,12 +15,14 @@ from db import (
     crear_comparendo,
     existe_comparendo,
     get_last_retoma,
-    update_retoma
+    update_retoma,
+    get_registros_pendientes_por_process_id
 )
 from holaamigo import holaamigo_login, holaamigo_template
 
 load_dotenv()
-BATCH_SIZE = int(os.getenv("BATCH_SIZE"))
+BATCH_SIZE_PROCESS = int(os.getenv("BATCH_SIZE_PROCESS"))
+BATCH_SIZE_TEMPLATE = int(os.getenv("BATCH_SIZE_TEMPLATE"))
 
 # Utilidad para construir el payload del template
 def construir_payload_template(usuarios):
@@ -62,11 +64,26 @@ def get_registros(offset, limit):
     conn.close()
     return results
 
+def enviar_templates_por_lotes(usuarios_para_envio, holaamigo_token, process_id, lote=BATCH_SIZE_TEMPLATE):
+    total = len(usuarios_para_envio)
+
+    for i in range(0, total, lote):
+        bloque = usuarios_para_envio[i:i+lote]
+        payload = construir_payload_template(bloque)
+        response_envio = holaamigo_template(holaamigo_token, payload)
+        print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Enviando lote {i//lote+1}: {len(bloque)} usuarios.")
+        if response_envio is None:
+            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Error al enviar el template: la respuesta fue vacía o inválida.")
+        else:
+            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Respuesta del envío: {response_envio.get('status')} - {response_envio.get('message')}")
+            if response_envio.get("status") == True:
+                update_estado_proceso(process_id, "completado")
+
 def verificar_comparendos():
     """Verifica comparendos, registra procesos y envía template."""
 
     offset = get_last_retoma()
-    registros = get_registros(offset, BATCH_SIZE)
+    registros = get_registros(offset, BATCH_SIZE_PROCESS)
 
     if not registros:
         print("No hay más registros para procesar este mes.")
@@ -120,6 +137,7 @@ def verificar_comparendos():
                         if lista and isinstance(lista, list) and len(lista) > 0:
                             for item in lista:
                                 numero_comparendo = item.get("numeroComparendo")
+                                fecha_comparendo = item.get("fechaComparendo")
                                 documento = registro.get("Document")
                                 phone = f"+57{registro.get('Phone')}"
                                 placa = item.get("placa")
@@ -145,10 +163,10 @@ def verificar_comparendos():
                                         "phone": phone,
                                         "parameters": [
                                             {"order": 0, "parameter": municipio},
-                                            {"order": 1, "parameter": item.get("fechaComparendo")},
+                                            {"order": 1, "parameter": fecha_comparendo},
                                             {"order": 2, "parameter": placa},
                                             {"order": 3, "parameter": codigo},
-                                            {"order": 5, "parameter": descripcion}
+                                            {"order": 4, "parameter": descripcion}
                                         ]
                                     }
                                     usuarios_para_envio.append(usuario_template)
@@ -159,32 +177,66 @@ def verificar_comparendos():
                                         documento,
                                         phone,
                                         numero_comparendo,
+                                        fecha_comparendo,
                                         codigo,
                                         process_id,
                                         "pendiente"
                                     )
                                 else:
                                     print(f"El comparendo ya fue notificado previamente Documento: {documento} Comparendo: {numero_comparendo}")
-    # Enviar template y actualizar estado
+
     if len(usuarios_para_envio) > 0:
         print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Enviando {len(usuarios_para_envio)} templates.")
         holaamigo_token = holaamigo_login()
         if not holaamigo_token:
             print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No se pudo obtener el token de HolaAmigo. Revisa las credenciales y la conexión.")
             return
-        payload = construir_payload_template(usuarios_para_envio)
-        response_envio = holaamigo_template(holaamigo_token, payload)
-        if response_envio is None:
-            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Error al enviar el template: la respuesta fue vacía o inválida.")
-        else:
-            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Respuesta del envío: {response_envio.get('status')} - {response_envio.get('message')}")
-            if response_envio.get("status") == True:
-                update_estado_proceso(process_id, "completado")
-                print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Proceso completado")
+        enviar_templates_por_lotes(usuarios_para_envio, holaamigo_token, process_id)
     # Actualizar offset para el siguiente batch
     nuevo_offset = offset + len(registros)
     update_retoma(nuevo_offset)
     print(f"Fin del proceso: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
 
+
+
+def procesar_pendientes_process_id(process_id):
+    registros = get_registros_pendientes_por_process_id(process_id)
+    if not registros:
+        print("No hay más registros pendientes para procesar con el process_id: ", process_id)
+        return
+
+    comparendos_dict = cargar_comparendos()
+    usuarios_para_envio = []
+    for registro in registros:
+        phone = registro.get('celular')
+        municipio = registro.get('municipio') if 'municipio' in registro else ''
+        placa = registro.get('placa') if 'placa' in registro else ''
+        codigo = registro.get('codigo_comparendo') if 'codigo_comparendo' in registro else ''
+        fecha_comparendo = registro.get('fecha_comparendo') if 'fecha_comparendo' in registro else ''
+        descripcion = comparendos_dict.get(codigo, '')
+        
+        usuario_template = {
+            "phone": phone,
+            "parameters": [
+                {"order": 0, "parameter": municipio},
+                {"order": 1, "parameter": fecha_comparendo},
+                {"order": 2, "parameter": placa},
+                {"order": 3, "parameter": codigo},
+                {"order": 4, "parameter": descripcion}
+            ]
+        }
+        usuarios_para_envio.append(usuario_template)
+
+    holaamigo_token = holaamigo_login()
+    if not holaamigo_token:
+        print("No se pudo obtener el token de HolaAmigo.")
+        return
+
+    enviar_templates_por_lotes(usuarios_para_envio, holaamigo_token, process_id, lote=BATCH_SIZE_TEMPLATE)
+
 if __name__ == "__main__":
-    verificar_comparendos()
+    if len(sys.argv) > 1:
+        process_id = sys.argv[1]
+        procesar_pendientes_process_id(process_id)
+    else:
+        verificar_comparendos()

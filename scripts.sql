@@ -49,3 +49,5 @@ CREATE TABLE retoma_log (
 	`offset` INT,
    fecha DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE proceso_log ADD COLUMN fecha_comparendo VARCHAR AFTER numero_comparendo;
