@@ -4,8 +4,9 @@ import random
 import string
 import requests
 import datetime
+import json
 from dotenv import load_dotenv
-from auth import login
+from comparendos_api import (login, consultar_info_home_public)
 from db import (
     get_db_connection,
     insert_proceso,
@@ -69,7 +70,9 @@ def enviar_templates_por_lotes(usuarios_para_envio, holaamigo_token, process_id,
 
     for i in range(0, total, lote):
         bloque = usuarios_para_envio[i:i+lote]
-        payload = construir_payload_template(bloque)
+        payload = construir_payload_template(bloque)    
+        print(f"Payload para el lote {i//lote+1}:")
+        print(json.dumps(payload, indent=2, ensure_ascii=False))
         response_envio = holaamigo_template(holaamigo_token, payload)
         print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Enviando lote {i//lote+1}: {len(bloque)} usuarios.")
         if response_envio is None:
@@ -100,13 +103,7 @@ def verificar_comparendos():
             "tipoConsulta": "0"
         }
         try:
-            response = session.post(
-                f"{os.getenv(f'{municipio}_API')}/home/findInfoHomePublic",
-                cookies=cookies,
-                json=payload,
-                verify=False,
-                timeout=30
-            )
+            response = consultar_info_home_public(municipio, session, token, payload)
             return municipio, response.json(), registro
         except Exception as e:
             print(f"Error en {municipio}: {e}")
