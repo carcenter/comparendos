@@ -51,3 +51,6 @@ CREATE TABLE retoma_log (
 );
 
 ALTER TABLE proceso_log ADD COLUMN fecha_comparendo VARCHAR AFTER numero_comparendo;
+
+ALTER TABLE testdb.proceso_log ADD process_template_id varchar(32) DEFAULT NULL NULL;
+ALTER TABLE testdb.proceso_log CHANGE process_template_id process_template_id varchar(32) DEFAULT NULL NULL AFTER process_id;
