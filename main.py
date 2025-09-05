@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 import os
 import sys
 import random
@@ -40,20 +41,6 @@ def construir_payload_template(usuarios):
         "sender": "School Center",
         "ParametersName": []
     }
-
-def consumir_api_template(endpoint_env, apikey_env, user_env, pass_env, payload):
-    """Consume una API template con autenticación y retorna la respuesta JSON."""
-    url = os.getenv(endpoint_env)
-    apikey = os.getenv(apikey_env)
-    usuario = os.getenv(user_env)
-    password = os.getenv(pass_env)
-    headers = {
-        "Authorization": f"Bearer {apikey}",
-        "Content-Type": "application/json"
-    }
-    auth = (usuario, password)
-    response = requests.post(url, json=payload, headers=headers, auth=auth, verify=False)
-    return response.json()
 
 def get_registros(offset, limit):
     """Obtiene registros de la tabla clients con paginación."""
@@ -211,18 +198,20 @@ def procesar_pendientes_process_id(process_id):
         codigo = registro.get('codigo_comparendo') if 'codigo_comparendo' in registro else ''
         fecha_comparendo = registro.get('fecha_comparendo') if 'fecha_comparendo' in registro else ''
         descripcion = comparendos_dict.get(codigo, '')
+
+        if (codigo != '' or codigo != NULL):       
+            usuario_template = {
+                "phone": phone,
+                "parameters": [
+                    {"order": 0, "parameter": municipio},
+                    {"order": 1, "parameter": fecha_comparendo},
+                    {"order": 2, "parameter": placa},
+                    {"order": 3, "parameter": codigo},
+                    {"order": 4, "parameter": descripcion}
+                ]
+            }
+            usuarios_para_envio.append(usuario_template)
         
-        usuario_template = {
-            "phone": phone,
-            "parameters": [
-                {"order": 0, "parameter": municipio},
-                {"order": 1, "parameter": fecha_comparendo},
-                {"order": 2, "parameter": placa},
-                {"order": 3, "parameter": codigo},
-                {"order": 4, "parameter": descripcion}
-            ]
-        }
-        usuarios_para_envio.append(usuario_template)
 
     holaamigo_token = holaamigo_login()
     if not holaamigo_token:
