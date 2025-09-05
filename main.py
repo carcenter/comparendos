@@ -199,7 +199,7 @@ def procesar_pendientes_process_id(process_id):
         fecha_comparendo = registro.get('fecha_comparendo') if 'fecha_comparendo' in registro else ''
         descripcion = comparendos_dict.get(codigo, '')
 
-        if (codigo != '' or codigo != NULL):       
+        if codigo:
             usuario_template = {
                 "phone": phone,
                 "parameters": [
