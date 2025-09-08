@@ -17,7 +17,6 @@ from db import (
     crear_comparendo,
     existe_comparendo,
     get_last_retoma,
-    update_retoma,
     get_registros_pendientes_por_process_template_id
 )
 from holaamigo import holaamigo_login, holaamigo_template
@@ -89,8 +88,6 @@ def verificar_comparendos():
     
     print(f"Inicio del proceso: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
     
-    # consultar_municipio ahora es global
-
     tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
     process_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
     comparendos_dict = cargar_comparendos()
@@ -110,8 +107,6 @@ def verificar_comparendos():
                     for future in futures:
                         municipio, data, registro = future.result()
 
-                        # print(f"Consulta {municipio}: {data}")
-
                         if not data:
                             continue
 
@@ -125,8 +120,6 @@ def verificar_comparendos():
                                     documento = registro.get("Document")
                                     phone = f"+57{registro.get('Phone')}"
                                     placa = item.get("placa")
-
-                                    print("numero_comparendo:", numero_comparendo)
 
                                     codigo = None
                                     descripcion = None
@@ -155,7 +148,6 @@ def verificar_comparendos():
                                                 {"order": 4, "parameter": descripcion}
                                             ]
                                         }
-                                        print("Usuario para envío:", usuario_template)
 
                                         usuarios_para_envio.append(usuario_template)
                                         insert_proceso(
@@ -172,7 +164,6 @@ def verificar_comparendos():
                                         )
                                     else:
                                         print(f"El comparendo ya fue notificado previamente Documento: {documento} Comparendo: {numero_comparendo}")
-            print(usuarios_para_envio)
             if len(usuarios_para_envio) > 0:
                 print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Enviando {len(usuarios_para_envio)} templates para el bloque (process_template_id: {process_template_id})")
                 holaamigo_token = holaamigo_login()
@@ -182,7 +173,7 @@ def verificar_comparendos():
                 enviar_templates(usuarios_para_envio, holaamigo_token, process_template_id)
 
     nuevo_offset = offset + len(registros)
-    # update_retoma(nuevo_offset)
+    update_retoma(nuevo_offset)
     print(f"Fin del proceso: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
 
 def procesar_pendientes_process_template_id(process_template_id):
