@@ -99,6 +99,9 @@ def verificar_comparendos():
             process_template_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
 
             for registro in bloque_registros:
+                # Validación: solo procesar registros cuyo campo Whatsapp == 2
+                if registro.get("Whatsapp") != 2:
+                    continue
                 with ThreadPoolExecutor(max_workers=4) as executor:
                     futures = [
                         executor.submit(consultar_municipio, session, municipio, registro, tokens[municipio])
