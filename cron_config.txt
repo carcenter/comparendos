@@ -1,0 +1,9 @@
+# Ejecución diaria a las 8:00 AM (procesa solo clientes del día)
+0 8 * * * .../comparendos/cron_daily.sh
+
+# Ejecución mensual desde el 1 de cada mes a las 2:00 AM
+# Se ejecuta diariamente desde el día 1 hasta completar toda la base de datos
+0 5 1-15 * * .../comparendos/cron_monthly.sh
+
+# Opcional: Ejecución manual con fecha específica
+# 0 18 * * * .../comparendos/cron_daily.sh 2025-10-01
