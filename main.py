@@ -28,7 +28,7 @@ BATCH_SIZE_TEMPLATE = int(os.getenv("BATCH_SIZE_TEMPLATE"))
 def get_registros(offset, limit):
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT id, Document, Phone FROM clients WHERE Whatsapp = 2 LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT id, Document, Phone FROM clients WHERE Whatsapp = 2 AND updatedAt >= '2025-11-17' LIMIT %s OFFSET %s", (limit, offset))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -38,7 +38,7 @@ def get_registros_del_dia(fecha):
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
     cursor.execute(
-        "SELECT id, Document, Phone FROM clients WHERE DATE(updatedAt) = %s AND Whatsapp = 2", 
+        "SELECT id, Document, Phone FROM clients WHERE DATE(updatedAt) = %s AND Whatsapp = 2 AND updatedAt >= '2025-11-17'", 
         (fecha,)
     )
     results = cursor.fetchall()
