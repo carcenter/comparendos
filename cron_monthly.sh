@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Script para ejecución mensual del procesamiento de comparendos
-# Se ejecuta para hacer el barrido completo de la base de datos por lotes
+# Se ejecuta DIARIAMENTE para procesar lotes de clientes antiguos
+# El día 1 del mes reinicia desde offset 0
+# Los demás días continúa desde donde quedó hasta terminar todos los registros
 
 cd .../comparendos
 source venv/bin/activate

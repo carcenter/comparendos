@@ -88,18 +88,47 @@ def enviar_templates(usuarios_para_envio, holaamigo_token, process_template_id):
             update_estado_proceso(process_template_id, "completado")
 
 def verificar_comparendos_clientes_nuevos(fecha=None):
-    if fecha is None:
-        fecha = datetime.datetime.now().strftime('%Y-%m-%d')
+    hoy = datetime.datetime.now()
     
-    print(f"Inicio del proceso diario para fecha {fecha}: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
-    
-    registros = get_registros_del_dia(fecha)
-    
-    if not registros:
-        print(f"No hay registros nuevos para procesar del día {fecha}.")
+    # Validar que no sea fin de semana (excepto si se pasa una fecha específica)
+    if fecha is None and hoy.weekday() >= 5:  # 5 = Sábado, 6 = Domingo
+        print(f"Hoy es fin de semana (día {hoy.strftime('%A')}), el proceso diario no se ejecuta.")
+        print("Los registros del fin de semana serán procesados el lunes.")
         return
     
-    print(f"Procesando {len(registros)} registros del día {fecha}")
+    if fecha is None:
+        # Si es lunes, procesar también sábado y domingo
+        if hoy.weekday() == 0:  # 0 = Lunes
+            print(f"Es lunes, procesando también clientes del fin de semana")
+            fechas_a_procesar = [
+                (hoy - datetime.timedelta(days=2)).strftime('%Y-%m-%d'),  # Sábado
+                (hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d'),  # Domingo
+                hoy.strftime('%Y-%m-%d')  # Lunes
+            ]
+        else:
+            fechas_a_procesar = [hoy.strftime('%Y-%m-%d')]
+    else:
+        fechas_a_procesar = [fecha]
+    
+    print(f"Inicio del proceso diario: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
+    print(f"Fechas a procesar: {fechas_a_procesar}")
+    
+    # Procesar todas las fechas
+    registros_totales = []
+    for fecha_proc in fechas_a_procesar:
+        registros_fecha = get_registros_del_dia(fecha_proc)
+        if registros_fecha:
+            print(f"Fecha {fecha_proc}: {len(registros_fecha)} registros")
+            registros_totales.extend(registros_fecha)
+        else:
+            print(f"Fecha {fecha_proc}: Sin registros")
+    
+    if not registros_totales:
+        print(f"No hay registros nuevos para procesar.")
+        return
+    
+    registros = registros_totales
+    print(f"Total a procesar: {len(registros)} registros")
     
     tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
     process_id = 'D_' + ''.join(random.choices(string.ascii_letters + string.digits, k=12))
@@ -191,6 +220,23 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
 def verificar_comparendos_clientes_antiguos():
     """Verifica comparendos, registra procesos y envía template."""
 
+    hoy = datetime.datetime.now()
+    
+    # Validar que no sea fin de semana
+    if hoy.weekday() >= 5:  # 5 = Sábado, 6 = Domingo
+        print(f"Hoy es fin de semana (día {hoy.strftime('%A')}), el proceso mensual no se ejecuta.")
+        return
+    
+    # Si es la primera semana del mes (días 1-7), detectar si necesita resetear
+    if hoy.day <= 7:  # Primera semana del mes
+        offset_actual = get_last_retoma()
+        if offset_actual > 0:
+            # Verificar si ya no hay más registros (terminó el mes anterior)
+            registros_test = get_registros(offset_actual, 1)
+            if not registros_test:  # Ya se procesaron todos los registros del mes anterior
+                print(f"Primer día hábil del mes (día {hoy.day}), reiniciando el proceso desde offset 0")
+                update_retoma(0)
+    
     offset = get_last_retoma()
     registros = get_registros(offset, BATCH_SIZE_PROCESS)
 
@@ -199,6 +245,7 @@ def verificar_comparendos_clientes_antiguos():
         return
     
     print(f"Inicio del proceso mensual: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
+    print(f"Procesando desde offset {offset}, lote de {len(registros)} registros")
     
     tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
     process_id = 'M_' + ''.join(random.choices(string.ascii_letters + string.digits, k=12))
