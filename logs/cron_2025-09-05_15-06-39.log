@@ -1,0 +1,1938 @@
+Payload para el lote 1:
+{
+  "users": [
+    {
+      "phone": "+573002700078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-20"
+        },
+        {
+          "order": 2,
+          "parameter": "JYU282"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007401610",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-08-04"
+        },
+        {
+          "order": 2,
+          "parameter": "LXL335"
+        },
+        {
+          "order": 3,
+          "parameter": "D04"
+        },
+        {
+          "order": 4,
+          "parameter": " No detenerse ante una luz roja o amarilla de semáforo, una señal de 'PARE' o un semáforo intermitente en rojo"
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2022-11-22"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2022-12-03"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2022-12-03"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2022-12-20"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-01-05"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-01-24"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-02-07"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-03-18"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-03-07"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-04-01"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-04-16"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573147927078",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-04-27"
+        },
+        {
+          "order": 2,
+          "parameter": "HNU653"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573122979273",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-19"
+        },
+        {
+          "order": 2,
+          "parameter": "NPP207"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573122979273",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-04-21"
+        },
+        {
+          "order": 2,
+          "parameter": "NPP207"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573122979273",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-03"
+        },
+        {
+          "order": 2,
+          "parameter": "NPP207"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573122979273",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-19"
+        },
+        {
+          "order": 2,
+          "parameter": "NPP207"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573122979273",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-03"
+        },
+        {
+          "order": 2,
+          "parameter": "NPP207"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573137641010",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2021-05-07"
+        },
+        {
+          "order": 2,
+          "parameter": "N/A"
+        },
+        {
+          "order": 3,
+          "parameter": "300"
+        },
+        {
+          "order": 4,
+          "parameter": "Infracciones morosas, acuerdo de pago incumplido"
+        }
+      ]
+    },
+    {
+      "phone": "+573136665330",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-11-21"
+        },
+        {
+          "order": 2,
+          "parameter": "N/A"
+        },
+        {
+          "order": 3,
+          "parameter": "300"
+        },
+        {
+          "order": 4,
+          "parameter": "Infracciones morosas, acuerdo de pago incumplido"
+        }
+      ]
+    },
+    {
+      "phone": "+573136665330",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-05-22"
+        },
+        {
+          "order": 2,
+          "parameter": "NGJ58D"
+        },
+        {
+          "order": 3,
+          "parameter": "H13"
+        },
+        {
+          "order": 4,
+          "parameter": "Las demas conductas que constituyan infraccion a las normas de transito y que no se encuentren descritas en este acto administrativo."
+        }
+      ]
+    },
+    {
+      "phone": "+573182097060",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-03-10"
+        },
+        {
+          "order": 2,
+          "parameter": "LGR722"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573182097060",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-06-30"
+        },
+        {
+          "order": 2,
+          "parameter": "LGR722"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573187825373",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-04-11"
+        },
+        {
+          "order": 2,
+          "parameter": "N/A"
+        },
+        {
+          "order": 3,
+          "parameter": "300"
+        },
+        {
+          "order": 4,
+          "parameter": "Infracciones morosas, acuerdo de pago incumplido"
+        }
+      ]
+    },
+    {
+      "phone": "+573013360553",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-02-09"
+        },
+        {
+          "order": 2,
+          "parameter": "CFU46E"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573102542127",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-05"
+        },
+        {
+          "order": 2,
+          "parameter": "CQI01G"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573102542127",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-19"
+        },
+        {
+          "order": 2,
+          "parameter": "ISL42B"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573102542127",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-02"
+        },
+        {
+          "order": 2,
+          "parameter": "ISL42B"
+        },
+        {
+          "order": 3,
+          "parameter": "D04"
+        },
+        {
+          "order": 4,
+          "parameter": " No detenerse ante una luz roja o amarilla de semáforo, una señal de 'PARE' o un semáforo intermitente en rojo"
+        }
+      ]
+    },
+    {
+      "phone": "+573102542127",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-01-04"
+        },
+        {
+          "order": 2,
+          "parameter": "N/A"
+        },
+        {
+          "order": 3,
+          "parameter": "300"
+        },
+        {
+          "order": 4,
+          "parameter": "Infracciones morosas, acuerdo de pago incumplido"
+        }
+      ]
+    },
+    {
+      "phone": "+573015638177",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-12"
+        },
+        {
+          "order": 2,
+          "parameter": "EWW378"
+        },
+        {
+          "order": 3,
+          "parameter": "H13"
+        },
+        {
+          "order": 4,
+          "parameter": "Las demas conductas que constituyan infraccion a las normas de transito y que no se encuentren descritas en este acto administrativo."
+        }
+      ]
+    },
+    {
+      "phone": "+573146190227",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-03-20"
+        },
+        {
+          "order": 2,
+          "parameter": "IOR587"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573146190227",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-05-31"
+        },
+        {
+          "order": 2,
+          "parameter": "IOR587"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573217480329",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-11-28"
+        },
+        {
+          "order": 2,
+          "parameter": "XNS77C"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573217480329",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-11-28"
+        },
+        {
+          "order": 2,
+          "parameter": "XNS77C"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573108338721",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-06"
+        },
+        {
+          "order": 2,
+          "parameter": "NPM880"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573045583617",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-08-04"
+        },
+        {
+          "order": 2,
+          "parameter": "RHO69G"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573045583617",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-05-15"
+        },
+        {
+          "order": 2,
+          "parameter": "RHO69G"
+        },
+        {
+          "order": 3,
+          "parameter": "D03"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar en sentido contrario al estipulado para la vía, calzada o carril"
+        }
+      ]
+    },
+    {
+      "phone": "+573045583617",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-10-01"
+        },
+        {
+          "order": 2,
+          "parameter": "RHO69G"
+        },
+        {
+          "order": 3,
+          "parameter": "C24"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir motocicleta sin observar las normas establecidas en el presente código"
+        }
+      ]
+    },
+    {
+      "phone": "+573128516742",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-02-15"
+        },
+        {
+          "order": 2,
+          "parameter": "OIM70G"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-08-01"
+        },
+        {
+          "order": 2,
+          "parameter": "DFS805"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-09-04"
+        },
+        {
+          "order": 2,
+          "parameter": "DFS805"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-27"
+        },
+        {
+          "order": 2,
+          "parameter": "KDT15F"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-27"
+        },
+        {
+          "order": 2,
+          "parameter": "KDT15F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-08"
+        },
+        {
+          "order": 2,
+          "parameter": "KDT15F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-24"
+        },
+        {
+          "order": 2,
+          "parameter": "KDT15F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-10-26"
+        },
+        {
+          "order": 2,
+          "parameter": "KDT15F"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573007075900",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "SABANETA"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-07-15"
+        },
+        {
+          "order": 2,
+          "parameter": "DFS805"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573105408411",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-09"
+        },
+        {
+          "order": 2,
+          "parameter": "AOW07G"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573127702613",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-04-27"
+        },
+        {
+          "order": 2,
+          "parameter": "GDZ721"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573127702613",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "SABANETA"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-04-26"
+        },
+        {
+          "order": 2,
+          "parameter": "GDZ721"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573218454557",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-27"
+        },
+        {
+          "order": 2,
+          "parameter": "DTK096"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573218454557",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-13"
+        },
+        {
+          "order": 2,
+          "parameter": "DTK096"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573218454557",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-08"
+        },
+        {
+          "order": 2,
+          "parameter": "DTK096"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573218454557",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-23"
+        },
+        {
+          "order": 2,
+          "parameter": "DTK096"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573004270279",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-30"
+        },
+        {
+          "order": 2,
+          "parameter": "UUW845"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573004270279",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-03-18"
+        },
+        {
+          "order": 2,
+          "parameter": "UUW845"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573113400911",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-08-03"
+        },
+        {
+          "order": 2,
+          "parameter": "YWF30F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573113400911",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-08-26"
+        },
+        {
+          "order": 2,
+          "parameter": "YWF30F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573113400911",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-09-24"
+        },
+        {
+          "order": 2,
+          "parameter": "YWF30F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573113400911",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-10-16"
+        },
+        {
+          "order": 2,
+          "parameter": "YWF30F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573113400911",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-11-13"
+        },
+        {
+          "order": 2,
+          "parameter": "YWF30F"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573226717044",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "SABANETA"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-09-17"
+        },
+        {
+          "order": 2,
+          "parameter": "JEB75D"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    },
+    {
+      "phone": "+573016339047",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-03-07"
+        },
+        {
+          "order": 2,
+          "parameter": "LFB21D"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573225129444",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-30"
+        },
+        {
+          "order": 2,
+          "parameter": "NHW446"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573104104997",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-05-22"
+        },
+        {
+          "order": 2,
+          "parameter": "JHP371"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573187958989",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-16"
+        },
+        {
+          "order": 2,
+          "parameter": "GRQ187"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573013375052",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-17"
+        },
+        {
+          "order": 2,
+          "parameter": "NIL248"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573043605696",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-13"
+        },
+        {
+          "order": 2,
+          "parameter": "GEW759"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573043605696",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-06-26"
+        },
+        {
+          "order": 2,
+          "parameter": "GEW759"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    },
+    {
+      "phone": "+573122973622",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-02"
+        },
+        {
+          "order": 2,
+          "parameter": "EFX003"
+        },
+        {
+          "order": 3,
+          "parameter": "C32"
+        },
+        {
+          "order": 4,
+          "parameter": "No respetar el paso de peatones que cruzan una vía en sitio permitido para ellos o no darles la prelación en las franjas para ello establecidas"
+        }
+      ]
+    },
+    {
+      "phone": "+573003937276",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-07-22"
+        },
+        {
+          "order": 2,
+          "parameter": "DFT428"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573166250858",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-10-30"
+        },
+        {
+          "order": 2,
+          "parameter": "YDA73D"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573166250858",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2023-11-27"
+        },
+        {
+          "order": 2,
+          "parameter": "YDA73D"
+        },
+        {
+          "order": 3,
+          "parameter": "C14"
+        },
+        {
+          "order": 4,
+          "parameter": "Transitar por los siguientes sitios restringidos o en horas prohibidas por la autoridad competente.  Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573128954097",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "ITAGUI"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-10-11"
+        },
+        {
+          "order": 2,
+          "parameter": "NGR963"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573128954097",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2024-10-02"
+        },
+        {
+          "order": 2,
+          "parameter": "NGR963"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    },
+    {
+      "phone": "+573015819895",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2025-08-12"
+        },
+        {
+          "order": 2,
+          "parameter": "KUO342"
+        },
+        {
+          "order": 3,
+          "parameter": "C29"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir un vehículo a velocidad superior a la máxima permitida"
+        }
+      ]
+    }
+  ],
+  "SaveInfo": false,
+  "origin": "API",
+  "templateName": "notificacion_comparendos",
+  "language": "ES",
+  "sender": "School Center",
+  "ParametersName": []
+}
+[2025-09-05 15:06:45] Enviando lote 1: 77 usuarios.
+[2025-09-05 15:06:45] Respuesta del envío: True - 
