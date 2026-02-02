@@ -38,14 +38,14 @@ def holaamigo_template(token, plantilla_payload):
         "Content-Type": "application/json"
     }
 
-    # try:
-    #     response = requests.post(url, json=plantilla_payload, headers=headers, verify=True)
-    #     response.raise_for_status()
-    #     return response.json()
-    # except requests.exceptions.RequestException as e:
-    #     print("Template request failed:", e)
-    #     return None
-    # except Exception as e:
-    #     print("Error decoding JSON in template:", e)
-    #     print("Raw response:", response.text if 'response' in locals() else 'No response')
-    #     return None
+    try:
+        response = requests.post(url, json=plantilla_payload, headers=headers, verify=True)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print("Template request failed:", e)
+        return None
+    except Exception as e:
+        print("Error decoding JSON in template:", e)
+        print("Raw response:", response.text if 'response' in locals() else 'No response')
+        return None
