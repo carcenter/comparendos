@@ -1,0 +1,60 @@
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+Inicio del proceso diario: [2026-02-04 08:00:03]
+Fechas a procesar: ['2026-02-04']
+Fecha 2026-02-04: 7 registros
+Total a procesar: 7 registros
+[2026-02-04 08:03:19] Enviando 1 templates para el bloque (process_template_id: ISrMIUuFQBgJ)
+Payload para el envío ISrMIUuFQBgJ:
+{
+  "users": [
+    {
+      "phone": "+573164999679",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2026-01-22"
+        },
+        {
+          "order": 2,
+          "parameter": "XLP54G"
+        },
+        {
+          "order": 3,
+          "parameter": "C32"
+        },
+        {
+          "order": 4,
+          "parameter": "No respetar el paso de peatones que cruzan una vía en sitio permitido para ellos o no darles la prelación en las franjas para ello establecidas"
+        }
+      ]
+    }
+  ],
+  "SaveInfo": false,
+  "origin": "API",
+  "templateName": "notificacion_comparendos",
+  "language": "ES",
+  "sender": "School Center",
+  "ParametersName": []
+}
+[2026-02-04 08:03:28] Enviando 1 templates.
+[2026-02-04 08:03:28] Respuesta del envío: True - 
+Fin del proceso diario: [2026-02-04 08:03:28]

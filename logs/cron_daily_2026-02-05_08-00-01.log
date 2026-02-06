@@ -1,0 +1,51 @@
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+Inicio del proceso diario: [2026-02-05 08:00:04]
+Fechas a procesar: ['2026-02-05']
+Fecha 2026-02-05: 11 registros
+Total a procesar: 11 registros
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Error en consulta_info_home_public para SABANETA: HTTPSConnectionPool(host='transitosabaneta.utsetsa.com', port=443): Read timed out. (read timeout=30)
+Error en SABANETA: 'NoneType' object has no attribute 'json'
+Fin del proceso diario: [2026-02-05 08:07:59]
