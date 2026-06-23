@@ -25,6 +25,8 @@ load_dotenv()
 BATCH_SIZE_PROCESS = int(os.getenv("BATCH_SIZE_PROCESS"))
 BATCH_SIZE_TEMPLATE = int(os.getenv("BATCH_SIZE_TEMPLATE"))
 
+MUNICIPIOS = ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA", "RIONEGRO"]
+
 def get_registros(offset, limit):
     conn = get_db_connection(os.getenv("DB_NAME"))
     cursor = conn.cursor(dictionary=True)
@@ -130,7 +132,7 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
     registros = registros_totales
     print(f"Total a procesar: {len(registros)} registros")
     
-    tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
+    tokens = {m: login(m) for m in MUNICIPIOS}
     process_id = 'D_' + ''.join(random.choices(string.ascii_letters + string.digits, k=12))
     comparendos_dict = cargar_comparendos()
 
@@ -141,7 +143,7 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
             process_template_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
 
             for registro in bloque_registros:
-                with ThreadPoolExecutor(max_workers=4) as executor:
+                with ThreadPoolExecutor(max_workers=len(tokens)) as executor:
                     futures = [
                         executor.submit(consultar_municipio, session, municipio, registro, tokens[municipio])
                         for municipio in tokens
@@ -247,7 +249,7 @@ def verificar_comparendos_clientes_antiguos():
     print(f"Inicio del proceso mensual: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
     print(f"Procesando desde offset {offset}, lote de {len(registros)} registros")
     
-    tokens = {m: login(m) for m in ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA"]}
+    tokens = {m: login(m) for m in MUNICIPIOS}
     process_id = 'M_' + ''.join(random.choices(string.ascii_letters + string.digits, k=12))
     comparendos_dict = cargar_comparendos()
 
@@ -258,7 +260,7 @@ def verificar_comparendos_clientes_antiguos():
             process_template_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
 
             for registro in bloque_registros:
-                with ThreadPoolExecutor(max_workers=4) as executor:
+                with ThreadPoolExecutor(max_workers=len(tokens)) as executor:
                     futures = [
                         executor.submit(consultar_municipio, session, municipio, registro, tokens[municipio])
                         for municipio in tokens

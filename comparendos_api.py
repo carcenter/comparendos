@@ -4,12 +4,13 @@ import sys
 
 def login(municipio):
     url = f"{os.getenv(municipio + '_API')}/login"
-    user = os.getenv(f"{municipio}_USER")
-    password = os.getenv(f"{municipio}_PASSWORD")
+    consumer = os.getenv("API_CONSUMER")
+    user = os.getenv("API_USER")
+    password = os.getenv("API_PASSWORD")
     verify = municipio != "BELLO"
 
     try:
-        resp = requests.post(url, json={"consumidor": "web", "usuario": user, "password": password}, verify=verify)
+        resp = requests.post(url, json={"consumidor": consumer, "usuario": user, "password": password}, verify=verify)
         resp.raise_for_status()
         return resp.json()["token"]
     except requests.exceptions.RequestException as e:
