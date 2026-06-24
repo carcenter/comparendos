@@ -1,0 +1,25 @@
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+Inicio del proceso diario: [2026-03-06 08:00:01]
+Fechas a procesar: ['2026-03-06']
+Fecha 2026-03-06: 8 registros
+Total a procesar: 8 registros
+Error en consulta_info_home_public para MEDELLIN: HTTPSConnectionPool(host='www.medellin.gov.co', port=443): Max retries exceeded with url: /backavit/avit/home/findInfoHomePublic (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f11f35907f0>, 'Connection to www.medellin.gov.co timed out. (connect timeout=30)'))
+Error en MEDELLIN: 'NoneType' object has no attribute 'json'
+Fin del proceso diario: [2026-03-06 08:04:14]

@@ -1,0 +1,60 @@
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+Inicio del proceso diario: [2026-06-24 08:00:01]
+Fechas a procesar: ['2026-06-24']
+Fecha 2026-06-24: 7 registros
+Total a procesar: 7 registros
+[2026-06-24 08:03:21] Enviando 1 templates para el bloque (process_template_id: VkFw6NSDAWVB)
+Payload para el envío VkFw6NSDAWVB:
+{
+  "users": [
+    {
+      "phone": "+573168139597",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2026-06-03"
+        },
+        {
+          "order": 2,
+          "parameter": "JWS910"
+        },
+        {
+          "order": 3,
+          "parameter": "D02"
+        },
+        {
+          "order": 4,
+          "parameter": "Conducir sin portar los seguros ordenados por la ley. Además, el vehículo será inmovilizado"
+        }
+      ]
+    }
+  ],
+  "SaveInfo": false,
+  "origin": "API",
+  "templateName": "notificacion_comparendos",
+  "language": "ES",
+  "sender": "School Center",
+  "ParametersName": []
+}
+[2026-06-24 08:03:25] Enviando 1 templates.
+[2026-06-24 08:03:25] Respuesta del envío: True - 
+Fin del proceso diario: [2026-06-24 08:03:25]

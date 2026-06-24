@@ -1,0 +1,81 @@
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/home/comparendos/venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serviciosdigitales.movilidadavanzadabello.com.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+Inicio del proceso diario: [2026-06-23 08:00:01]
+Fechas a procesar: ['2026-06-23']
+Fecha 2026-06-23: 5 registros
+Total a procesar: 5 registros
+[2026-06-23 08:03:10] Enviando 2 templates para el bloque (process_template_id: rUKwkjN4EgvF)
+Payload para el envío rUKwkjN4EgvF:
+{
+  "users": [
+    {
+      "phone": "+573016285586",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2026-06-02"
+        },
+        {
+          "order": 2,
+          "parameter": "UZJ14F"
+        },
+        {
+          "order": 3,
+          "parameter": "C02"
+        },
+        {
+          "order": 4,
+          "parameter": "Estacionar un vehículo en sitios prohibidos"
+        }
+      ]
+    },
+    {
+      "phone": "+573016285586",
+      "parameters": [
+        {
+          "order": 0,
+          "parameter": "MEDELLIN"
+        },
+        {
+          "order": 1,
+          "parameter": "2026-06-17"
+        },
+        {
+          "order": 2,
+          "parameter": "UZJ14F"
+        },
+        {
+          "order": 3,
+          "parameter": "C35"
+        },
+        {
+          "order": 4,
+          "parameter": "No realizar la revisión técnico-mecánica en el plazo legal establecido o cuando el vehículo no se encuentre en adecuadas condiciones técnico-mecánicas o de emisiones contaminantes, aun cuando porte los certificados correspondientes, además el vehículo será inmovilizado."
+        }
+      ]
+    }
+  ],
+  "SaveInfo": false,
+  "origin": "API",
+  "templateName": "notificacion_comparendos",
+  "language": "ES",
+  "sender": "School Center",
+  "ParametersName": []
+}
+[2026-06-23 08:03:15] Enviando 2 templates.
+[2026-06-23 08:03:15] Respuesta del envío: True - 
+Fin del proceso diario: [2026-06-23 08:03:15]
