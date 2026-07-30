@@ -130,7 +130,7 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
         return
     
     registros = registros_totales
-    print(f"Total a procesar: {len(registros)} registros")
+    print(f"Registros nuevos encontrados: {len(registros)}")
     
     tokens = {m: login(m) for m in MUNICIPIOS}
     process_id = 'D_' + ''.join(random.choices(string.ascii_letters + string.digits, k=12))
@@ -142,7 +142,8 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
             usuarios_para_envio = []
             process_template_id = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
 
-            for registro in bloque_registros:
+            for idx, registro in enumerate(bloque_registros, start=j + 1):
+                print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Procesando cliente {idx}/{len(registros)}: documento={registro.get('Document')}, telefono={registro.get('Phone')}")
                 with ThreadPoolExecutor(max_workers=len(tokens)) as executor:
                     futures = [
                         executor.submit(consultar_municipio, session, municipio, registro, tokens[municipio])
@@ -152,10 +153,13 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
                         municipio, data, registro = future.result()
 
                         if not data:
+                            print(f"    {municipio}: sin respuesta de la secretaría")
                             continue
 
                         consulta = data.get("consultaMultaOComparendoOutDTO", {})
                         comparendos = consulta.get("informacionComparendo", [])
+                        total_municipio = len(comparendos) if isinstance(comparendos, list) else 0
+                        print(f"    {municipio}: {total_municipio} comparendos encontrados")
                         for lista, tipo in [(comparendos, "comparendo")]:
                             if lista and isinstance(lista, list) and len(lista) > 0:
                                 for item in lista:
