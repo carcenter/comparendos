@@ -3,10 +3,10 @@
 ## Scripts Creados
 
 ### 1. Ejecución Diaria (`cron_daily.sh`)
-- **Propósito**: Procesa solo los clientes registrados en el día actual o fecha específica
-- **Comando**: `python main.py daily [fecha_opcional]`
+- **Propósito**: Procesa los clientes registrados o actualizados el día anterior. Los lunes procesa viernes, sábado y domingo. Con una fecha específica, procesa todos los registros desde esa fecha hasta hoy.
+- **Comando**: `python main.py daily [fecha_inicio_opcional]`
 - **Logs**: `logs/cron_daily_YYYY-MM-DD_HH-MM-SS.log`
-- **Uso**: `./cron_daily.sh` o `./cron_daily.sh 2025-10-01`
+- **Uso**: `./cron_daily.sh` o `./cron_daily.sh 2025-10-01` (procesa desde el 2025-10-01 hasta hoy)
 
 ### 2. Ejecución Mensual (`cron_monthly.sh`)
 - **Propósito**: Hace el barrido completo de la base de datos por lotes
@@ -32,7 +32,7 @@
 
 ## Horarios Configurados
 
-- **Diario**: 8:00 AM todos los días (procesa clientes del día)
+- **Diario**: 8:00 AM todos los días (procesa clientes del día anterior; lunes cubre viernes a domingo)
 - **Mensual**: 5:00 AM del día 1 al 15 de cada mes (barrido completo por lotes)
 - **Opcional**: 6:00 PM para reprocesar fechas específicas
 
@@ -40,10 +40,10 @@
 
 ### Usando Python directamente:
 ```bash
-# Procesar clientes del día actual
+# Procesar clientes del día anterior (lunes: viernes, sábado y domingo)
 python main.py daily
 
-# Procesar clientes de una fecha específica
+# Procesar clientes desde una fecha específica hasta hoy
 python main.py daily 2025-10-01
 
 # Ejecución mensual (barrido completo)
@@ -55,10 +55,10 @@ python main.py ABC123XYZ
 
 ### Usando scripts de cron:
 ```bash
-# Procesar día actual
+# Procesar día anterior
 ./cron_daily.sh
 
-# Procesar fecha específica
+# Procesar desde una fecha específica hasta hoy
 ./cron_daily.sh 2025-10-01
 
 # Ejecución mensual

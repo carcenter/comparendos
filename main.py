@@ -99,18 +99,32 @@ def verificar_comparendos_clientes_nuevos(fecha=None):
         return
     
     if fecha is None:
-        # Si es lunes, procesar también sábado y domingo
+        # Se procesa el día anterior para incluir los registros creados o
+        # actualizados después de la hora de ejecución del cron
         if hoy.weekday() == 0:  # 0 = Lunes
-            print(f"Es lunes, procesando también clientes del fin de semana")
+            print(f"Es lunes, procesando clientes del viernes, sábado y domingo")
             fechas_a_procesar = [
+                (hoy - datetime.timedelta(days=3)).strftime('%Y-%m-%d'),  # Viernes
                 (hoy - datetime.timedelta(days=2)).strftime('%Y-%m-%d'),  # Sábado
-                (hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d'),  # Domingo
-                hoy.strftime('%Y-%m-%d')  # Lunes
+                (hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d')   # Domingo
             ]
         else:
-            fechas_a_procesar = [hoy.strftime('%Y-%m-%d')]
+            fechas_a_procesar = [(hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d')]
     else:
-        fechas_a_procesar = [fecha]
+        # Con fecha explícita se procesa el rango desde esa fecha hasta hoy
+        try:
+            fecha_inicio = datetime.datetime.strptime(fecha, '%Y-%m-%d').date()
+        except ValueError:
+            print(f"Fecha inválida: {fecha}. El formato esperado es YYYY-MM-DD.")
+            return
+        if fecha_inicio > hoy.date():
+            print(f"La fecha {fecha} es posterior a hoy, no hay nada que procesar.")
+            return
+        dias_rango = (hoy.date() - fecha_inicio).days
+        fechas_a_procesar = [
+            (fecha_inicio + datetime.timedelta(days=d)).strftime('%Y-%m-%d')
+            for d in range(dias_rango + 1)
+        ]
     
     print(f"Inicio del proceso diario: [{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
     print(f"Fechas a procesar: {fechas_a_procesar}")
