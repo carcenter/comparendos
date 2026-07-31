@@ -3,7 +3,7 @@
 ## Scripts Creados
 
 ### 1. Ejecución Diaria (`cron_daily.sh`)
-- **Propósito**: Procesa los clientes registrados o actualizados el día anterior. Los lunes procesa viernes, sábado y domingo. Con una fecha específica, procesa todos los registros desde esa fecha hasta hoy.
+- **Propósito**: Procesa los clientes registrados o actualizados desde el último día hábil anterior hasta ayer (cubre fines de semana, festivos colombianos y puentes automáticamente). No corre en fines de semana ni festivos. Con una fecha específica, procesa todos los registros desde esa fecha hasta hoy.
 - **Comando**: `python main.py daily [fecha_inicio_opcional]`
 - **Logs**: `logs/cron_daily_YYYY-MM-DD_HH-MM-SS.log`
 - **Uso**: `./cron_daily.sh` o `./cron_daily.sh 2025-10-01` (procesa desde el 2025-10-01 hasta hoy)
@@ -32,7 +32,7 @@
 
 ## Horarios Configurados
 
-- **Diario**: 8:00 AM todos los días (procesa clientes del día anterior; lunes cubre viernes a domingo)
+- **Diario**: 8:00 AM todos los días hábiles (procesa desde el último día hábil anterior hasta ayer; no corre en festivos)
 - **Mensual**: 5:00 AM del día 1 al 15 de cada mes (barrido completo por lotes)
 - **Opcional**: 6:00 PM para reprocesar fechas específicas
 
@@ -40,7 +40,7 @@
 
 ### Usando Python directamente:
 ```bash
-# Procesar clientes del día anterior (lunes: viernes, sábado y domingo)
+# Procesar desde el último día hábil anterior hasta ayer
 python main.py daily
 
 # Procesar clientes desde una fecha específica hasta hoy

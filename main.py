@@ -5,6 +5,7 @@ import string
 import requests
 import datetime
 import json
+import holidays
 from dotenv import load_dotenv
 from comparendos_api import (login, consultar_info_home_public)
 from concurrent.futures import ThreadPoolExecutor
@@ -26,6 +27,24 @@ BATCH_SIZE_PROCESS = int(os.getenv("BATCH_SIZE_PROCESS"))
 BATCH_SIZE_TEMPLATE = int(os.getenv("BATCH_SIZE_TEMPLATE"))
 
 MUNICIPIOS = ["BELLO", "ITAGUI", "MEDELLIN", "SABANETA", "RIONEGRO"]
+
+FESTIVOS_COLOMBIA = holidays.Colombia()
+
+def es_dia_habil(fecha):
+    """Un día es hábil si no es fin de semana ni festivo en Colombia."""
+    return fecha.weekday() < 5 and fecha not in FESTIVOS_COLOMBIA
+
+def fechas_desde_ultimo_dia_habil(hoy):
+    """Fechas desde el último día hábil anterior a hoy hasta ayer, inclusive.
+    Cubre fines de semana, festivos y puentes consecutivos."""
+    ayer = hoy - datetime.timedelta(days=1)
+    inicio = ayer
+    while not es_dia_habil(inicio):
+        inicio -= datetime.timedelta(days=1)
+    return [
+        (inicio + datetime.timedelta(days=d)).strftime('%Y-%m-%d')
+        for d in range((ayer - inicio).days + 1)
+    ]
 
 def get_registros(offset, limit):
     conn = get_db_connection(os.getenv("DB_NAME"))
@@ -92,24 +111,16 @@ def enviar_templates(usuarios_para_envio, holaamigo_token, process_template_id):
 def verificar_comparendos_clientes_nuevos(fecha=None):
     hoy = datetime.datetime.now()
     
-    # Validar que no sea fin de semana (excepto si se pasa una fecha específica)
-    if fecha is None and hoy.weekday() >= 5:  # 5 = Sábado, 6 = Domingo
-        print(f"Hoy es fin de semana (día {hoy.strftime('%A')}), el proceso diario no se ejecuta.")
-        print("Los registros del fin de semana serán procesados el lunes.")
+    # Validar que sea día hábil (excepto si se pasa una fecha específica)
+    if fecha is None and not es_dia_habil(hoy.date()):
+        print(f"Hoy ({hoy.strftime('%Y-%m-%d')}) es fin de semana o festivo, el proceso diario no se ejecuta.")
+        print("Los registros pendientes serán procesados el siguiente día hábil.")
         return
-    
+
     if fecha is None:
-        # Se procesa el día anterior para incluir los registros creados o
-        # actualizados después de la hora de ejecución del cron
-        if hoy.weekday() == 0:  # 0 = Lunes
-            print(f"Es lunes, procesando clientes del viernes, sábado y domingo")
-            fechas_a_procesar = [
-                (hoy - datetime.timedelta(days=3)).strftime('%Y-%m-%d'),  # Viernes
-                (hoy - datetime.timedelta(days=2)).strftime('%Y-%m-%d'),  # Sábado
-                (hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d')   # Domingo
-            ]
-        else:
-            fechas_a_procesar = [(hoy - datetime.timedelta(days=1)).strftime('%Y-%m-%d')]
+        # Se procesa desde el último día hábil anterior hasta ayer, para cubrir
+        # fines de semana, festivos y puentes sin dejar registros sin procesar
+        fechas_a_procesar = fechas_desde_ultimo_dia_habil(hoy.date())
     else:
         # Con fecha explícita se procesa el rango desde esa fecha hasta hoy
         try:
@@ -242,9 +253,9 @@ def verificar_comparendos_clientes_antiguos():
 
     hoy = datetime.datetime.now()
     
-    # Validar que no sea fin de semana
-    if hoy.weekday() >= 5:  # 5 = Sábado, 6 = Domingo
-        print(f"Hoy es fin de semana (día {hoy.strftime('%A')}), el proceso mensual no se ejecuta.")
+    # Validar que sea día hábil
+    if not es_dia_habil(hoy.date()):
+        print(f"Hoy ({hoy.strftime('%Y-%m-%d')}) es fin de semana o festivo, el proceso mensual no se ejecuta.")
         return
     
     # Si es la primera semana del mes (días 1-7), detectar si necesita resetear
